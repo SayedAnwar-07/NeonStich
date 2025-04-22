@@ -2,7 +2,7 @@
 
 **NeonStich** is a modern and stylish clothing e-commerce web app built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It delivers a seamless shopping experience for customers and a powerful admin dashboard for managing the entire store.
 
-![NeonStich Logo](https://i.ibb.co.com/RTxFPgTD/Neon-Stich.png)
+![NeonStich Logo](https://i.ibb.co.com/V5d7y0Z/Neon-Stich.png)
 
 ## ✨ Features
 
