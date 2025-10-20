@@ -91,7 +91,6 @@ const Navbar = () => {
             />
           </Link>
         )}
-
         <Link to="/cart" className="relative">
           <img
             src={assets.cart_icon}

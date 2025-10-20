@@ -162,7 +162,7 @@ const Product = () => {
       </div>
 
       {/* description and review */}
-      <div className="tabs tabs-border mt-16">
+      <div className="tabs tabs-border mt-16 ">
         <input
           type="radio"
           name="my_tabs_2"
@@ -170,7 +170,7 @@ const Product = () => {
           aria-label="Description"
           defaultChecked
         />
-        <div className="tab-content border-base-300 bg-base-100 p-6 mt-6">
+        <div className="tab-content p-6 mt-6">
           <p className="text-base text-gray-600 mb-4">
             This product is a perfect blend of innovation, style, and
             practicality, designed to elevate your everyday experiences. It is
@@ -203,10 +203,10 @@ const Product = () => {
         <input
           type="radio"
           name="my_tabs_2"
-          className="tab"
+          className="tab "
           aria-label="Reviews"
         />
-        <div className="tab-content border-base-300 bg-base-100 border-none mt-6">
+        <div className="tab-content border-none mt-6">
           <Reviews />
         </div>
       </div>

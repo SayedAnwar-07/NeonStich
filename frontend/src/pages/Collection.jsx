@@ -11,7 +11,7 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState(products);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
-  const [priceRange, setPriceRange] = useState([0, 400]);
+  const [priceRange, setPriceRange] = useState([0, 50]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(12);
   const [searchTerm, setSearchTerm] = useState("");
@@ -101,7 +101,7 @@ const Collection = () => {
             onChange={handlePriceChange}
             valueLabelDisplay="auto"
             min={0}
-            max={400}
+            max={50}
             step={10}
             aria-labelledby="price-range-slider"
           />

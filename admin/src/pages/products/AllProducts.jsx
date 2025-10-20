@@ -166,12 +166,40 @@ const AllProducts = () => {
                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                   ${product.price}
                 </td>
-                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td
+                  className={`px-4 py-4 whitespace-nowrap text-sm font-medium
+                    ${product.category === "Men" ? "bg-blue-50" : ""}
+                    ${product.category === "Women" ? "bg-pink-50" : ""}
+                    ${product.category === "Kids" ? "bg-green-50" : ""}
+                  `}
+                >
                   {product.category}
                 </td>
-                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {product.subCategory}
+
+                <td className="">
+                  <span
+                    className={`ml-4 px-4 py-1 whitespace-nowrap text-sm rounded-full text-gray-700 border border-gray-200 text-center
+                              ${
+                                product.subCategory === "Topwear"
+                                  ? "bg-orange-100"
+                                  : ""
+                              }
+                              ${
+                                product.subCategory === "Bottomwear"
+                                  ? "bg-purple-100"
+                                  : ""
+                              }
+                              ${
+                                product.subCategory === "Winterwear"
+                                  ? "bg-cyan-100"
+                                  : ""
+                              }
+                            `}
+                  >
+                    {product.subCategory}
+                  </span>
                 </td>
+
                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                   {product.sizes?.join(", ")}
                 </td>
