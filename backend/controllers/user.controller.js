@@ -160,7 +160,7 @@ export const adminLogin = async (req, res) => {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
       admin = await userModel.create({
-        name: "Admin",
+        name: "Saeed Tamim",
         email,
         password: hashedPassword,
         role: "admin",
