@@ -2,7 +2,15 @@
 
 **NeonStich** is a modern and stylish clothing e-commerce web app built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It delivers a seamless shopping experience for customers and a powerful admin dashboard for managing the entire store.
 
-![NeonStich Logo](https://i.ibb.co.com/V5d7y0Z/Neon-Stich.png)
+## 📸 Project Preview
+
+![NeonStich Preview](./assets/neonstich-preview.png)
+
+## 🌐 Live Demonstration
+
+⚠️ **Important:** The backend is hosted on Render's free tier. If data does not load immediately, please allow up to 5 minutes for the server to wake up and then refresh the page.
+
+🔗 **Live Application:** https://neonstich.netlify.app/
 
 ## ✨ Features
 
@@ -32,20 +40,3 @@
 - 📦 **Order Management** – View all orders, update status (e.g., Processing → Shipped).
 - 📊 **Dashboard Overview** – Track total sales, number of products, users, and orders.
 - 🔐 **Role-Based Access** – Only authenticated admins can access dashboard & admin routes.
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-- Node.js (v14+)
-- MongoDB
-- Stripe account
-- Cloudinary account
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/neonstich.git
-cd neonstich
