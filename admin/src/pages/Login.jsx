@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import Title from "../components/Title";
 import axios from "axios";
-import backendURL from "../components/allURL";
+import backendURL from "../components/backendURL";
 import { toast } from "react-toastify";
 
 const Login = ({ setToken }) => {

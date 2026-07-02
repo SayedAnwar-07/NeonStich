@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import backendURL from "../../components/allURL";
+import backendURL from "../../components/backendURL";
 import Title from "../../components/Title";
 import { assets } from "../../assets/admin_assets/assets";
 
@@ -63,7 +63,7 @@ const UpdateProducts = ({ token }) => {
       } catch (error) {
         console.error(
           "Error fetching product:",
-          error.response?.data || error.message
+          error.response?.data || error.message,
         );
         toast.error(error.response?.data?.message || "Error fetching product");
       }
@@ -88,7 +88,7 @@ const UpdateProducts = ({ token }) => {
         setExistingImages((prev) => {
           const updated = [...prev];
           const existingIndex = updated.findIndex(
-            (img) => img.name === imageName
+            (img) => img.name === imageName,
           );
 
           if (existingIndex >= 0) {
@@ -109,7 +109,7 @@ const UpdateProducts = ({ token }) => {
 
   const handleSizeToggle = (size) => {
     setSizes((prev) =>
-      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
+      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size],
     );
   };
 
@@ -142,7 +142,7 @@ const UpdateProducts = ({ token }) => {
             Authorization: `Bearer ${token}`, // Ensure token is included
           },
           withCredentials: true,
-        }
+        },
       );
 
       toast.success(data.message);
@@ -150,7 +150,7 @@ const UpdateProducts = ({ token }) => {
     } catch (error) {
       console.error(
         "Error updating product:",
-        error.response?.data || error.message
+        error.response?.data || error.message,
       );
       toast.error(error.response?.data?.message || "Error updating product");
     } finally {
@@ -183,7 +183,7 @@ const UpdateProducts = ({ token }) => {
             {[0, 1, 2, 3].map((index) => {
               const imageName = `image${index + 1}`;
               const existingImage = existingImages.find(
-                (img) => img.name === imageName
+                (img) => img.name === imageName,
               );
               const isImageSet = existingImage || imageFiles[imageName];
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../components/Title";
-import backendURL from "../../components/allURL";
+import backendURL from "../../components/backendURL";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -57,7 +57,7 @@ const AllProducts = () => {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
 
         if (response.data.success) {
@@ -90,7 +90,7 @@ const AllProducts = () => {
   const filteredProducts = list.filter(
     (product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+      product.description.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (

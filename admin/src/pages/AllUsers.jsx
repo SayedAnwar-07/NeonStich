@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import backendURL from "../components/allURL";
+import backendURL from "../components/backendURL";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";

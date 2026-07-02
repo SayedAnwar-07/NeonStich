@@ -2,12 +2,14 @@ import React, { useContext, useState } from "react";
 import { assets } from "../assets/frontend_assets/assets.js";
 import { Link, NavLink } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext.jsx";
+import { useUserProfile } from "@/context/UserProfileContext.jsx";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { getCartCount, token, setToken, setCartItem, navigate } =
     useContext(ShopContext);
+  const { user } = useUserProfile();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -47,8 +49,8 @@ const Navbar = () => {
         {token ? (
           <div className="group relative">
             <img
-              src={assets.profile_icon}
-              className="w-5 cursor-pointer"
+              src={user?.profileImage || assets.profile_icon}
+              className={`${user ? "w-8 h-8 object-cover border border-gray-800 rounded-full" : "w-5"} cursor-pointer`}
               alt=""
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
@@ -67,7 +69,7 @@ const Navbar = () => {
                     My Profile
                   </Link>
                   <Link
-                    to="/orders"
+                    to="/order-status"
                     className="cursor-pointer hover:text-black"
                   >
                     Orders
@@ -163,7 +165,7 @@ const Navbar = () => {
               <NavLink
                 onClick={() => setVisible(false)}
                 className="py-2 pl-6 border-b border-gray-300"
-                to="/orders"
+                to="/order-status"
               >
                 ORDERS
               </NavLink>

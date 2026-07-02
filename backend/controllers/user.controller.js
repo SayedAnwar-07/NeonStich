@@ -2,6 +2,11 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import userModel from "../models/user.model.js";
 
+import { v2 as cloudinary } from "cloudinary";
+import connectCloudinary from "../config/cloudinaryConfig.js";
+
+connectCloudinary();
+
 // Utility function to generate token
 const generateToken = (userId, role) => {
   const secretKey = process.env.JWT_SECRET;
@@ -111,6 +116,53 @@ export const userProfile = async (req, res) => {
   } catch (error) {
     console.error("Error in userProfile:", error);
     res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// profile edit
+export const updateUserProfile = async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    const { name } = req.body;
+
+    const user = await userModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    if (name) {
+      user.name = name;
+    }
+
+    if (req.file) {
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        resource_type: "image",
+        folder: "user_profiles",
+      });
+
+      user.profileImage = result.secure_url;
+    }
+
+    await user.save();
+
+    const updatedUser = await userModel.findById(userId).select("-password");
+
+    res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      user: updatedUser,
+    });
+  } catch (error) {
+    console.error("Error in updateUserProfile:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
   }
 };
 

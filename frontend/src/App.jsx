@@ -13,6 +13,7 @@ import Login from "./pages/authentication/Login";
 import Register from "./pages/authentication/Register";
 import Layout from "./layouts/Layout";
 import OrderStatus from "./pages/OrderStatus";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
   return (
@@ -32,6 +33,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
+          {/* profile */}
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -6,6 +6,7 @@ import {
   logout,
   getAllUsers,
   adminLogin,
+  updateUserProfile,
 } from "../controllers/user.controller.js";
 import { authMiddleware } from "../middlewares/authMiddleware.js";
 
@@ -17,6 +18,15 @@ router.post("/login", userLogin);
 
 // Protected Routes (Require Authentication)
 router.get("/profile", authMiddleware(["user", "admin"]), userProfile);
+import upload from "../middlewares/multer.js";
+
+router.put(
+  "/profile",
+  authMiddleware(["user", "admin"]),
+  upload.single("profileImage"),
+  updateUserProfile,
+);
+
 router.post("/logout", authMiddleware(["user", "admin"]), logout);
 
 // Admin-Only Routes

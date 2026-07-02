@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { assets } from "../../assets/admin_assets/assets";
 import axios from "axios";
-import backendURL from "../../components/allURL";
+import backendURL from "../../components/backendURL";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Title from "../../components/Title";
@@ -73,7 +73,7 @@ const AddProduct = ({ token }) => {
             "Content-Type": "multipart/form-data",
           },
           withCredentials: true,
-        }
+        },
       );
 
       toast.success(res.data.message);
