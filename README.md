@@ -12,6 +12,8 @@
 
 🔗 **Live Application:** https://neonstich.netlify.app/
 
+🔗 **Live Admin panel:** https://neonstich-admin-panel.netlify.app/
+
 ## ✨ Features
 
 - 🛍️ **Product Browsing** – View items by category, size, and price.
